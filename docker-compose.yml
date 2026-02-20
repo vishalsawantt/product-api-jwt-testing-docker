@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+
+  app:
+    build: .
+    container_name: product_app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/product_zest_assignment
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    container_name: product_postgres
+    environment:
+      POSTGRES_DB: product_zest_assignment
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
