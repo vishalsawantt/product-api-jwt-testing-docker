@@ -41,6 +41,42 @@ The project follows layered architecture with separation of concerns.
 
 ---
 
+## 🔑 Security
+
+The API is secured using JWT authentication.
+
+- Users must login to obtain access token
+- Protected endpoints require Bearer token
+- Role-based authorization restricts access to ADMIN operations
+
+---
+
+## 📡 API Endpoints
+
+### Auth
+- POST /api/v1/auth/register
+- POST /api/v1/auth/login
+- POST /api/v1/auth/refresh
+
+### Products
+- GET /api/v1/products
+- GET /api/v1/products/{id}
+- POST /api/v1/products
+- PUT /api/v1/products/{id}
+- DELETE /api/v1/products/{id}
+
+### Items
+- POST /api/v1/products/{id}/items
+- GET /api/v1/products/{id}/items
+
+---
+
+## 📄 Pagination Example
+
+GET /api/v1/products?page=0&size=5
+
+---
+
 ## ▶️ Running the Application
 
 ### 1️⃣ Clone repository
